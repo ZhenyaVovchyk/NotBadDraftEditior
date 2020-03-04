@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style11.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery-linenumbers.js"></script>
+    <script src="js/emmet.js"></script>
+    <script>
+        $('document').ready(function () {
+            $('.out').linenumbers({ col_width: '75px' });
+
+            emmet.require('textarea').setup({
+                pretty_break: true,
+                use_tab: true
+            });
+
+
+            $('.html').show();
+            $("#selectItem").change(function () {
+                $('.div1').find('textarea').hide();
+                let selected = $('#selectItem option:selected').attr('id');
+                $('.' + selected).show();
+            });
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <select id='selectItem'>
+            <option id='html'>html</option>
+            <option id='css'>css</option>
+            <option id='js'>js</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="div1">
+            <div class="out2" id='formatted'></div>
+            <textarea class="out" id="html" placeholder="Html"></textarea>
+        </div>
+    </div>
+
+
+
+    <script src="js/script11.js"></script>
+</body>
+
+</html>
